@@ -1,0 +1,25 @@
+services:
+  syncplay:
+    image: dnomd343/syncplay
+    container_name: syncplay
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      - PORT=${PORT}
+      - PASSWORD=${PASSWORD}
+      - MOTD=${MOTD}
+      - SALT=${SALT}
+      - RANDOM_SALT=${RANDOM_SALT}
+      - ISOLATE_ROOMS=${ISOLATE_ROOMS}
+      - DISABLE_CHAT=${DISABLE_CHAT}
+      - DISABLE_READY=${DISABLE_READY}
+      - ENABLE_STATS=${ENABLE_STATS}
+      - ENABLE_TLS=${ENABLE_TLS}
+      - PERSISTENT=${PERSISTENT}
+      - MAX_USERNAME=${MAX_USERNAME}
+      - MAX_CHAT_MESSAGE=${MAX_CHAT_MESSAGE}
+      - LISTEN_IPV4=${LISTEN_IPV4}
+      - LISTEN_IPV6=${LISTEN_IPV6}
+    mem_limit: 256m
+    memswap_limit: 1536m
+    cpus: "1.0"
