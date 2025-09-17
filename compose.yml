@@ -20,6 +20,8 @@ services:
       - MAX_CHAT_MESSAGE=${MAX_CHAT_MESSAGE}
       - LISTEN_IPV4=${LISTEN_IPV4}
       - LISTEN_IPV6=${LISTEN_IPV6}
+    volumes:
+      - /srv/docker/syncplay/data:/data
     mem_limit: 256m
     memswap_limit: 1536m
     cpus: "1.0"
